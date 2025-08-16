@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pack’O’Bite – Small Packet, Big Bite!</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand:wght@400;700&family=Rubik:wght@400;700;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --pack-red: #ef4444;
+      --pack-yellow: #fbbf24;
+      --pack-orange: #f97316;
+    }
+    body { font-family: Rubik, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, sans-serif; }
+    .hand-font { font-family: 'Patrick Hand', cursive; }
+    @keyframes floaty { 0%,100% { transform: translateY(0) } 50% { transform: translateY(-14px) } }
+    .floaty { animation: floaty 6s ease-in-out infinite; }
+    @keyframes wobble { 0%,100%{transform:rotate(0)} 15%{transform:rotate(-3deg) scale(1.02)} 30%{transform:rotate(3deg)} 45%{transform:rotate(-2deg)} 60%{transform:rotate(2deg)} 75%{transform:rotate(-1deg)} }
+    .btn-wobble:hover { animation:wobble .7s ease-in-out; }
+    .price-bounce:hover { transform: translateY(-4px) scale(1.05); }
+    .reveal { opacity:0; transform: translateY(16px); transition: all .6s ease; }
+    .reveal.show { opacity:1; transform: translateY(0); }
+    .hero-wrap { position: relative; height: 90vh; min-height: 560px; overflow: hidden; }
+    .hero-bg { position:absolute; inset:0; background-position:center; background-size:cover; will-change: transform; }
+    .hero-overlay { position:absolute; inset:0; background: linear-gradient(180deg, rgba(0,0,0,.25), rgba(255,255,255,.65)); }
+    .snack { position:absolute; width:56px; height:56px; filter: drop-shadow(0 6px 10px rgba(0,0,0,.25)); opacity:.8; }
+    .container-pad { max-width: 1120px; margin: 0 auto; padding: 0 1rem; }
+  </style>
+</head>
+<body class="bg-gradient-to-b from-yellow-100 via-orange-50 to-rose-50 text-zinc-900 overflow-x-hidden">
+  <div class="sticky top-0 z-40 backdrop-blur bg-white/60 border-b border-orange-200">
+    <div class="container-pad flex items-center justify-between gap-3 py-2">
+      <div class="flex items-center gap-3">
+        <div class="h-9 w-9 rounded-full bg-[var(--pack-red)] grid place-items-center text-[var(--pack-yellow)] font-extrabold">PB</div>
+        <span class="text-sm font-semibold">Pack’O’Bite — Street Food Vibes</span>
+      </div>
+      <a href="#menu" class="btn-wobble rounded-full bg-[var(--pack-yellow)] px-3 py-1 text-sm font-bold shadow hover:shadow-md">Explore Menu</a>
+    </div>
+  </div>
+
+  <header class="hero-wrap">
+    <div class="hero-bg" id="hero-bg" style="background-image: url('assets/Screenshot 2025-08-14 194234.png'), radial-gradient(circle at 30% 30%, var(--pack-yellow), var(--pack-red));"></div>
+    <div class="hero-overlay"></div>
+
+    <svg class="snack floaty" style="left:12%; top:24%;" viewBox="0 0 64 64">
+      <path d="M10 22l22-12 22 12-10 24H20L10 22z" fill="#FFE082" stroke="#D97706" stroke-width="2"></path>
+      <circle cx="26" cy="26" r="2" fill="#D97706"></circle>
+      <circle cx="36" cy="20" r="2" fill="#D97706"></circle>
+      <circle cx="44" cy="28" r="2" fill="#D97706"></circle>
+    </svg>
+    <svg class="snack floaty" style="left:78%; top:30%; animation-delay:.8s" viewBox="0 0 64 64">
+      <path d="M6 50L32 10l26 40H6z" fill="#FBBF24" stroke="#B45309" stroke-width="2"></path>
+      <circle cx="26" cy="30" r="2" fill="#B45309"></circle>
+      <circle cx="38" cy="38" r="2" fill="#B45309"></circle>
+      <circle cx="30" cy="44" r="2" fill="#B45309"></circle>
+    </svg>
+    <svg class="snack floaty" style="left:68%; top:70%; animation-delay:1.3s" viewBox="0 0 64 64">
+      <path d="M8 28c0-8 10-14 24-14s24 6 24 14-10 14-24 14S8 36 8 28z" fill="#F59E0B" stroke="#92400E" stroke-width="2"></path>
+      <path d="M16 28c0 4 6 8 16 8s16-4 16-8" fill="none" stroke="#92400E" stroke-width="2"></path>
+    </svg>
+
+    <div class="relative h-full w-full grid place-items-center text-center px-4">
+      <div>
+        <img src='assets/WhatsApp Image 2025-08-14 at 19.27.40_f2be4f32.jpg' alt='PackOBite Logo' class='mx-auto mb-4 h-20 w-20 md:h-28 md:w-28 rounded-full ring-4 ring-[var(--pack-yellow)] shadow-xl'/>
+        <h1 class="text-4xl md:text-6xl font-black text-white drop-shadow-[0_4px_12px_rgba(0,0,0,.35)]">
+          Pack’O’Bite – <span class="text-[var(--pack-yellow)]">Small Packet, Big Bite!</span>
+        </h1>
+        <p class="mt-3 text-white/90 text-lg md:text-xl hand-font">Bring your pack, we bring the bite! 🎉</p>
+        <div class="mt-6">
+          <a href="#menu" class="btn-wobble inline-block rounded-full bg-[var(--pack-yellow)] px-6 py-3 font-bold shadow-lg hover:shadow-xl">Explore Menu</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section id="about" class="py-16 md:py-20 container-pad">
+    <h2 class="text-3xl md:text-4xl font-extrabold text-[var(--pack-red)] reveal">About Us</h2>
+    <p class="mt-4 text-lg md:text-xl leading-8 text-zinc-800 reveal">
+      We’re just here to make your taste buds dance! 💃🕺 At <strong>Pack’O’Bite</strong>, we mix your favorite packet snacks with fresh veggies 🥗, cheese 🧀 and saucy magic 🌶️. Perfect for quick bites with friends!
+    </p>
+    <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div class="h-44 rounded-2xl bg-gradient-to-br from-yellow-200 to-orange-200 shadow-inner relative overflow-hidden reveal"><div class="absolute inset-0 opacity-20 flex items-center justify-center text-7xl">🍿</div><div class="absolute bottom-3 left-3 right-3 text-sm font-semibold">Street-food vibes, fresh crunch, happy munch! 😋</div></div>
+<div class="h-44 rounded-2xl bg-gradient-to-br from-yellow-200 to-orange-200 shadow-inner relative overflow-hidden reveal"><div class="absolute inset-0 opacity-20 flex items-center justify-center text-7xl">🍿</div><div class="absolute bottom-3 left-3 right-3 text-sm font-semibold">Street-food vibes, fresh crunch, happy munch! 😋</div></div>
+<div class="h-44 rounded-2xl bg-gradient-to-br from-yellow-200 to-orange-200 shadow-inner relative overflow-hidden reveal"><div class="absolute inset-0 opacity-20 flex items-center justify-center text-7xl">🍿</div><div class="absolute bottom-3 left-3 right-3 text-sm font-semibold">Street-food vibes, fresh crunch, happy munch! 😋</div></div>
+<div class="h-44 rounded-2xl bg-gradient-to-br from-yellow-200 to-orange-200 shadow-inner relative overflow-hidden reveal"><div class="absolute inset-0 opacity-20 flex items-center justify-center text-7xl">🍿</div><div class="absolute bottom-3 left-3 right-3 text-sm font-semibold">Street-food vibes, fresh crunch, happy munch! 😋</div></div>
+<div class="h-44 rounded-2xl bg-gradient-to-br from-yellow-200 to-orange-200 shadow-inner relative overflow-hidden reveal"><div class="absolute inset-0 opacity-20 flex items-center justify-center text-7xl">🍿</div><div class="absolute bottom-3 left-3 right-3 text-sm font-semibold">Street-food vibes, fresh crunch, happy munch! 😋</div></div>
+<div class="h-44 rounded-2xl bg-gradient-to-br from-yellow-200 to-orange-200 shadow-inner relative overflow-hidden reveal"><div class="absolute inset-0 opacity-20 flex items-center justify-center text-7xl">🍿</div><div class="absolute bottom-3 left-3 right-3 text-sm font-semibold">Street-food vibes, fresh crunch, happy munch! 😋</div></div>
+    </div>
+  </section>
+
+  <section id="menu" class="py-16 md:py-20 bg-gradient-to-b from-orange-100 via-yellow-50 to-orange-100">
+    <div class="container-pad">
+      <h2 class="text-3xl md:text-4xl font-extrabold text-orange-600 mb-6 reveal">Menu</h2>
+      <div class="grid md:grid-cols-2 gap-8">
+        <div>
+          <h3 class="text-2xl font-bold">🍿 Snacks</h3>
+          <div class="mt-4 grid grid-cols-1 gap-3" id="snacks-list"></div>
+        </div>
+        <div>
+          <h3 class="text-2xl font-bold">💰 Prices</h3>
+          <div class="mt-4 grid grid-cols-1 gap-3" id="prices-list"></div>
+        </div>
+      </div>
+      <div class="mt-10 grid md:grid-cols-3 gap-6">
+        <div class="rounded-2xl bg-white/90 border border-orange-200 p-5 shadow">
+          <h4 class="text-xl font-bold">🥗 Veggies</h4>
+          <ul class="mt-3 grid grid-cols-2 gap-2" id="veggies-list"></ul>
+        </div>
+        <div class="rounded-2xl bg-white/90 border border-orange-200 p-5 shadow">
+          <h4 class="text-xl font-bold">🧀 Extras</h4>
+          <ul class="mt-3 flex flex-wrap gap-2" id="extras-list"></ul>
+        </div>
+        <div class="rounded-2xl bg-white/90 border border-orange-200 p-5 shadow">
+          <h4 class="text-xl font-bold">🌶 Sauces</h4>
+          <ul class="mt-3 flex flex-wrap gap-2" id="sauces-list"></ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="py-16 md:py-20 container-pad">
+    <h2 class="text-3xl md:text-4xl font-extrabold text-[var(--pack-red)] reveal">Contact</h2>
+    <div class="mt-6 grid md:grid-cols-2 gap-8">
+      <div class="rounded-2xl bg-gradient-to-br from-red-500 to-orange-400 p-6 text-white shadow-xl">
+        <div class="text-sm opacity-90">Call / WhatsApp</div>
+        <div class="mt-1 text-3xl md:text-4xl font-extrabold tracking-wide">+91 93168 47358</div>
+        <p class="mt-3 text-white/90">Fastest way to order during happy hours! 📞🔥</p>
+      </div>
+      <form action="https://formspree.io/f/xanbkovk" method="POST" class="rounded-2xl bg-white p-6 shadow border border-orange-200">
+        <div class="grid gap-4">
+          <div>
+            <label class="text-sm font-semibold">Name</label>
+            <input name="name" required placeholder="Your name" class="mt-1 w-full rounded-xl border border-zinc-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-orange-400"/>
+          </div>
+          <div>
+            <label class="text-sm font-semibold">Phone</label>
+            <input name="phone" required pattern="[0-9+\-\s]{8,15}" placeholder="Your number" class="mt-1 w-full rounded-xl border border-zinc-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-orange-400"/>
+          </div>
+          <div>
+            <label class="text-sm font-semibold">Message</label>
+            <textarea name="message" rows="4" placeholder="What would you like?" class="mt-1 w-full rounded-xl border border-zinc-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-orange-400"></textarea>
+          </div>
+          <button class="btn-wobble rounded-xl bg-red-500 text-white font-bold px-5 py-3 shadow hover:shadow-lg" type="submit">Send</button>
+        </div>
+        <input type="hidden" name="_subject" value="PackOBite Website Message"/>
+      </form>
+    </div>
+  </section>
+
+  <footer class="py-8 bg-rose-600 text-white">
+    <div class="container-pad text-center hand-font">© 2025 Pack’O’Bite – Made with ❤️ for friends</div>
+  </footer>
+
+  <script>
+    const io = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>e.target.classList.toggle('show', e.isIntersecting));
+    }, { threshold: .15 });
+    document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+    const bg = document.getElementById('hero-bg');
+    window.addEventListener('scroll', ()=>{
+      const yy = Math.min(1, window.scrollY / 800);
+      bg.style.transform = `translateY(${yy*20}%)`;
+    });
+
+    const snacks = [
+      { name: "Crunchem", variants: ["Chat Masala","Masala Masti"] },
+      { name: "Veggie Stix", variants: ["Chilli Chataka","Sour Cream Onion"] },
+      { name: "Too Yummy", variants: ["Rings"] },
+      { name: "Puffcorn" },
+      { name: "Nachos" },
+      { name: "Lays" },
+      { name: "Mad Angles" }
+    ];
+    const prices = [
+      { label: "₹10 (packet) + veggies", price: "₹29" },
+      { label: "₹20 (packet) + veggies", price: "₹45" },
+      { label: "₹40 (packet) + veggies", price: "₹75" },
+      { label: "₹50 (packet) + veggies", price: "₹85" }
+    ];
+    const veggies = ["Tomatoes","Onions","Cucumber","Capsicum","Sweet Corn","Carrot","Cabbage"];
+    const extras = ["Paneer","Cheese"];
+    const sauces = ["Mayonnaise","Tomato Ketchup","Green Chilli","Schezwan","Peri Peri","Maggi Masala"];
+
+    function popWrap(html) {
+      const div = document.createElement('div');
+      div.innerHTML = html.trim();
+      const el = div.firstElementChild;
+      el.style.opacity = 0; el.style.transform = 'translateY(10px) scale(.96)';
+      setTimeout(()=>{ el.style.transition='all .4s ease'; el.style.opacity = 1; el.style.transform='translateY(0) scale(1)'; }, 30);
+      return el;
+    }
+
+    const snacksList = document.getElementById('snacks-list');
+    snacks.forEach((s)=>{
+      snacksList.appendChild(popWrap(`
+        <div class="rounded-xl bg-white/90 border border-orange-200 p-4 shadow hover:shadow-md">
+          <div class="flex items-center justify-between">
+            <div class="font-bold text-lg">${s.name}</div>
+            <span class="text-sm text-orange-600">${s.variants ? s.variants.join(' · ') : ''}</span>
+          </div>
+        </div>
+      `));
+    });
+
+    const pricesList = document.getElementById('prices-list');
+    prices.forEach((p)=>{
+      pricesList.appendChild(popWrap(`
+        <div class="group rounded-xl bg-white/90 border border-yellow-300 p-4 shadow hover:shadow-md flex items-center justify-between">
+          <div class="font-medium">${p.label}</div>
+          <div class="price-bounce text-2xl font-extrabold text-red-600 group-hover:scale-105 transition-transform">${p.price}</div>
+        </div>
+      `));
+    });
+
+    function pill(text, cls) {
+      return `<li class="rounded-full ${cls} px-3 py-1 text-sm border">${text}</li>`;
+    }
+    document.getElementById('veggies-list').innerHTML = veggies.map(v=>pill(v,'bg-green-50 border-green-200')).join('');
+    document.getElementById('extras-list').innerHTML = extras.map(v=>pill(v,'bg-yellow-50 border-yellow-300')).join('');
+    document.getElementById('sauces-list').innerHTML = sauces.map(v=>pill(v,'bg-red-50 border-red-200')).join('');
+
+    // Fill about cards
+    // (Already static in HTML)
+  </script>
+</body>
+</html>
