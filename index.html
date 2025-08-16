@@ -5,78 +5,62 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pack’O’Bite</title>
   <link rel="stylesheet" href="css/style.css">
+  <script src="js/script.js" defer></script>
 </head>
 <body>
-
   <!-- Hero Section -->
   <section class="hero">
-    <img src="assets/banner.jpg" class="hero-bg" alt="Pack’O’Bite Banner">
-    <div class="hero-content">
+    <div class="hero-overlay">
       <h1 class="bounce">Pack’O’Bite – Small Packet, Big Bite!</h1>
-      <img src="assets/logo.png" class="logo" alt="Pack’O’Bite Logo">
+      <p>Snack Attack with Street Food Vibes 🎉</p>
     </div>
     <div class="floating-icons">
-      <span>🍟</span>
-      <span>🍿</span>
-      <span>🥨</span>
+      <img src="images/chips.png" alt="Chips">
+      <img src="images/nachos.png" alt="Nachos">
+      <img src="images/puffcorn.png" alt="Puffcorn">
     </div>
   </section>
 
   <!-- About Us -->
   <section class="about">
     <h2>About Us</h2>
-    <p>
-      We’re just here to make your taste buds dance! 😋<br>
-      At <b>Pack’O’Bite</b>, we mix your favorite packet snacks with fresh veggies 🥗, cheese 🧀, and sauces 🌶️.<br>
-      Perfect for quick bites with friends! 👫
+    <p>We’re just here to make your taste buds dance! 😋  
+      At <b>Pack’O’Bite</b>, we mix your favorite packet snacks with fresh veggies 🥗, cheese 🧀, and sauces 🌶.  
+      Perfect for quick bites with friends 👯‍♂️!
     </p>
-    <div class="about-images">
-      <img src="assets/photo1.jpg" alt="Snack 1">
-      <img src="assets/photo2.jpg" alt="Snack 2">
-    </div>
+    <img src="images/about1.jpg" class="slide-in">
+    <img src="images/about2.jpg" class="slide-in">
   </section>
 
   <!-- Menu -->
   <section class="menu">
     <h2>Our Menu</h2>
-
-    <div class="menu-block">
-      <h3>🍿 Snacks</h3>
-      <ul>
-        <li>Crunchem – Chat Masala, Masala Masti</li>
-        <li>Veggie Stix – Chilli Chataka, Sour Cream Onion</li>
-        <li>Too Yummy – Rings</li>
-        <li>Puffcorn</li>
-        <li>Nachos</li>
-        <li>Lays</li>
-        <li>Mad Angles</li>
-      </ul>
+    <div class="menu-items">
+      <div class="card">🍿 Crunchem – Chat Masala, Masala Masti</div>
+      <div class="card">🍿 Veggie Stix – Chilli Chataka, Sour Cream Onion</div>
+      <div class="card">🍿 Too Yummy – Rings</div>
+      <div class="card">🍿 Puffcorn</div>
+      <div class="card">🍿 Nachos</div>
+      <div class="card">🍿 Lays</div>
+      <div class="card">🍿 Mad Angles</div>
     </div>
 
-    <div class="menu-block">
-      <h3>💰 Prices</h3>
-      <ul>
-        <li>₹10 (packet) + veggies = <span class="price">₹29</span></li>
-        <li>₹20 (packet) + veggies = <span class="price">₹45</span></li>
-        <li>₹40 (packet) + veggies = <span class="price">₹75</span></li>
-        <li>₹50 (packet) + veggies = <span class="price">₹85</span></li>
-      </ul>
-    </div>
+    <h3>💰 Prices</h3>
+    <ul class="prices">
+      <li>₹10 (packet) + veggies = <span class="bounce-hover">₹29</span></li>
+      <li>₹20 (packet) + veggies = <span class="bounce-hover">₹45</span></li>
+      <li>₹40 (packet) + veggies = <span class="bounce-hover">₹75</span></li>
+      <li>₹50 (packet) + veggies = <span class="bounce-hover">₹85</span></li>
+    </ul>
 
-    <div class="menu-block">
-      <h3>🥗 Veggies</h3>
-      <p>Tomatoes, Onions, Cucumber, Capsicum, Sweet Corn, Carrot, Cabbage</p>
-    </div>
+    <h3>🥗 Veggies</h3>
+    <p>Tomatoes, Onions, Cucumber, Capsicum, Sweet Corn, Carrot, Cabbage</p>
 
-    <div class="menu-block">
-      <h3>🧀 Extras</h3>
-      <p>Paneer, Cheese</p>
-    </div>
+    <h3>🧀 Extras</h3>
+    <p>Paneer, Cheese</p>
 
-    <div class="menu-block">
-      <h3>🌶 Sauces</h3>
-      <p>Mayonnaise, Tomato Ketchup, Green Chilli, Schezwan, Peri Peri, Maggi Masala</p>
-    </div>
+    <h3>🌶 Sauces</h3>
+    <p>Mayonnaise, Tomato Ketchup, Green Chilli, Schezwan, Peri Peri, Maggi Masala</p>
   </section>
 
   <!-- Contact -->
@@ -85,7 +69,7 @@
     <p class="phone">📞 +91 93168 47358</p>
     <form action="https://formspree.io/f/xanbkovk" method="POST">
       <input type="text" name="name" placeholder="Your Name" required>
-      <input type="text" name="phone" placeholder="Your Phone" required>
+      <input type="tel" name="phone" placeholder="Your Phone" required>
       <textarea name="message" placeholder="Your Message"></textarea>
       <button type="submit">Send</button>
     </form>
@@ -95,7 +79,5 @@
   <footer>
     <p>© 2025 Pack’O’Bite – Made with ❤️ for friends</p>
   </footer>
-
-  <script src="js/script.js"></script>
 </body>
 </html>
