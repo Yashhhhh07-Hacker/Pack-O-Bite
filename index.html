@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pack’o’bite — Street Food</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="hero">
+    <img src="assets/logo.png" alt="Pack’o’bite Logo" class="logo">
+    <h1>Pack’o’bite</h1>
+    <p>Street Food with a Bite!</p>
+  </header>
+
+  <section class="menu">
+    <h2>Our Menu</h2>
+    <div id="menu-items"></div>
+  </section>
+
+  <section class="contact">
+    <h2>Order Now</h2>
+    <p>📞 +91 93168 47358</p>
+    <form action="https://formspree.io/f/xanbkovk" method="POST">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="text" name="order" placeholder="Your Order" required>
+      <button type="submit">Place Order</button>
+    </form>
+  </section>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
